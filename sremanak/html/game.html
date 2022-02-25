@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Hororové postavičky</title>
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+    <link href="../../style.css" rel="stylesheet">
+    <link href="../../app/shared/css/game-layout.css" rel="stylesheet">
+    <link href="../css/game.css" rel="stylesheet">
+    <link href="../../app/shared/css/breadcrumbs.css" rel="stylesheet">
+    <link href="../../favicon.png" rel="icon" type="image/png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../js/canvas/coordinates.js"></script>
+    <script src="../js/puzzle/piece/imagePiece.js"></script>
+    <script src="../js/puzzle/piece/piece.js"></script>
+    <script src="../js/puzzle/puzzle.js"></script>
+    <script src="../js/canvas/dimension.js"></script>
+    <script src="../js/canvas/engine/gameEngine.js"></script>
+    <script defer src="../js/game.js"></script>
+    <script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="../../app/breadcrumbs/breadcrumbs-component.js"></script>
+
+
+    <script src="../../app/attendance-counter/js/attendance-cookies-handler.js"></script>
+
+    <script defer src="../../app/three-level-menu/js/three-level-menu.component.js"></script>
+
+
+</head>
+<body onload="onLoad()">
+<audio id="tick" preload="auto" src="../../app/assets/audio/sremanak/tick.mp3"></audio>
+<audio id="done" preload="auto" src="../../app/assets/audio/sremanak/done.mp3"></audio>
+
+
+<three-level-menu>
+</three-level-menu>
+
+<div class="breadcrumbs-container">
+    <breadcrumbs-component></breadcrumbs-component>
+</div>
+<section class="game-container" id="game-container">
+
+    <div class="game-container-info robot-background">
+        <h1 class="game-container-info-title bold-max">Hororové postavičky</h1>
+        <h2 class="game-container-info-name">Ľuboš <span class="bold-max">Sremaňák</span></h2>
+    </div>
+
+    <div class="game-container-settings">
+
+        <button class="game-container-settings-button sounds-button material-icons" id="sounds" onclick="sounds(this)"
+                value=true>
+            volume_up
+        </button>
+        <div class="dropdown game-container-settings-button game-container-settings-difficulty">
+            <button aria-expanded="false" aria-haspopup="true" class="dropdown-toggle game-container-settings-button"
+                    data-toggle="dropdown"
+                    id="difficulty" type="button" value="difficulty">
+                Obtiažnosť
+            </button>
+            <div aria-labelledby="difficulty" class="dropdown-menu">
+                <button class="dropdown-item  game-container-settings-button" id="easyOption" onclick="difficulty(this)"
+                        value="easy">Ľahká
+                </button>
+                <button class="dropdown-item  game-container-settings-button" id="mediumOption"
+                        onclick="difficulty(this)"
+                        value="medium">Stredná
+                </button>
+                <button class="dropdown-item  game-container-settings-button" id="hardOption" onclick="difficulty(this)"
+                        value="hard">Ťažká
+                </button>
+            </div>
+        </div>
+        <button class="game-container-settings-button" id="start" onclick="startGame(this)" value="true">Štart</button>
+        <button class="game-container-settings-button" id="demo" onclick="demo()">Demo</button>
+        <span class="" id="time">00:00</span>
+
+    </div>
+
+
+    <div class="game-container-canvas" id="game-canvas">
+    </div>
+</section>
+</body>
+</html>

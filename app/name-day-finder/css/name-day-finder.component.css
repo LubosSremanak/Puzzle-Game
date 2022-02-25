@@ -1,0 +1,124 @@
+.nameday-input-div {
+    margin-top: 5px;
+    text-align: left;
+}
+
+
+.nameday-input {
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+
+#holiday-input, #date-input, #name-input {
+    width: calc(100% - 100px);
+    text-align: center;
+}
+
+#holiday-input {
+    margin-left: 26px !important;
+}
+
+#date-input {
+    margin-left: 50px !important;
+}
+
+#name-input {
+    margin-left: 38px !important;
+}
+
+
+#text-name, #text-holiday {
+    font-size: xx-large;
+}
+
+#text-div {
+    margin-bottom: 15px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .nameday-input {
+    }
+
+    .nameday-input-div {
+        margin-left: auto !important;
+
+    }
+
+    #holiday-input, #date-input, #name-input {
+        width: 100%;
+        margin-left: auto !important;
+        text-align: center;
+    }
+}
+
+ul#country-chooser {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+
+}
+
+ul#country-chooser li {
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-left: 10px;
+}
+
+ul#country-chooser li:nth-child(1) {
+    margin-left: 0;
+}
+
+
+ul#country-chooser li:hover {
+    font-weight: bold;
+}
+
+.active-country {
+    font-weight: bold;
+}
+
+#more-names-button {
+    transition: all 0.5s;
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.button-with-icon {
+    font-size: small;
+}
+
+.button-with-icon a {
+    transition: all 0.5s;
+    margin-right: 5px;
+}
+
+
+.button-with-icon:hover {
+    cursor: pointer;
+}
+
+.button-with-icon:hover a {
+    font-size: medium;
+    cursor: pointer;
+}
+
+#more-names {
+    font-size: small;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.name-day-inputs-container {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(252, 252, 252, 0.3);
+
+}
