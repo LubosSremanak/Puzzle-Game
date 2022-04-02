@@ -215,7 +215,5 @@ function onLoad() {
     loadImagesFromJson().then(json => {
         puzzle.createPiecesFromImagesAndDrawToCanvas(json.images);
     });
-
-    handleAttendanceCookies()
 }
 
